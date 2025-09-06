@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Game_Markova.Classes;
+using System.Windows.Threading;
 
 namespace Game_Markova
 {
@@ -22,11 +23,29 @@ namespace Game_Markova
     public partial class MainWindow : Window
     {
         public PersonInfo Player = new PersonInfo("Student", 100, 10, 1, 0, 0, 5);
+        public List<PersonInfo> Enemys = new List<PersonInfo>();
+        DispatcherTimer dispatcherTimer = new DispatcherTimer();
 
         public MainWindow()
         {
             InitializeComponent();
+            UserInfoPlayer();
+
+            Enemys.Add(new PersonInfo("Болотный зверь", 100, 10, 1, 0, 15, 10));
+            Enemys.Add(new PersonInfo("Болотный зверь 2", 120, 15, 1, 0, 30, 15));
+            Enemys.Add(new PersonInfo("Болотный зверь 3", 150, 20, 1, 0, 40, 20));
+
+            dispatcherTimer.Tick += AtackPlayer;
+            dispatcherTimer.Interval = new System.TimeSpan(0, 0, 10);
+            dispatcherTimer.Start();
+
         }
+
+        private void AtackPlayer(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         public void UserInfoPlayer()
         {
             if(Player.Glasses > Player.Level * 100)
