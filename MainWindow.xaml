@@ -19,13 +19,13 @@
             Margin="10">
 
             <Grid>
-                <Image Margin="10, 10, 10, 185"/>
+                <Image Margin="10, 10, 10, 185" Source="/Image/player.png"/>
                 <Label Content="Основные характеристики персонажа:" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" Margin="10, 0, 0, 160"/>
-                <Label Content="Жизненные показатели:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 130"/>
-                <Label Content="Броня:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 100"/>
-                <Label Content="Уровеь:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 70"/>
-                <Label Content="Опыт:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 40"/>
-                <Label Content="Монеты:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 10"/>
+                <Label x:Name="playerHealth" Content="Жизненные показатели:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 130"/>
+                <Label x:Name="playerArmor" Content="Броня:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 100"/>
+                <Label x:Name="playerLevel" Content="Уровеь:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 70"/>
+                <Label x:Name="playerGlasses" Content="Опыт:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 40"/>
+                <Label x:Name="playerMoney" Content="Монеты:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 10"/>
             </Grid>
         </Border>
         <Border
@@ -35,13 +35,11 @@
             Margin="10,10,10,10" Grid.Column="1">
 
             <Grid>
-                <Image Margin="10, 10, 10, 185"/>
+                <Image x:Name="enemyImage" Margin="10, 10, 10, 185" Source="/Image/enemy_0.png"/>
                 <Label Content="Основные характеристики персонажа:" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" Margin="10, 0, 0, 160"/>
-                <Label Content="Жизненные показатели:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 130"/>
-                <Label Content="Броня:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 100"/>
-                <Label Content="Уровеь:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 70"/>
-                <Label Content="Опыт:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 40"/>
-                <Label Content="Монеты:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 10"/>
+                <Label x:Name="enemyHealth" Content="Жизненные показатели:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 130"/>
+                <Label x:Name="enemyArmor" Content="Броня:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 100"/>
+
             </Grid>
         </Border>
     </Grid>
