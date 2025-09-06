@@ -46,7 +46,8 @@ namespace Game_Markova
 
         private void AtackPlayer(object sender, EventArgs e)
         {
-            
+            Player.Health -= Convert.ToInt32(Enemy.Damage * 100f / (100f - Player.Armor));
+            UserInfoPlayer();
         }
 
         public void SelectEnemy()
@@ -82,8 +83,7 @@ namespace Game_Markova
 
         private void AttackEnemy(object sender, MouseButtonEventArgs e)
         {
-            Player.Health -= Convert.ToInt32(Enemy.Damage * 100f / (100f - Player.Armor));
-            UserInfoPlayer();
+
         }
     }
 }
