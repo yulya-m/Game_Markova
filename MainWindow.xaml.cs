@@ -94,7 +94,7 @@ namespace Game_Markova
             else
             {
                 enemyHealth.Content = "Жизненные показатели: " + Enemy.Health;
-                enemyArmor.Content = "Броня: " + Enemy.Armor;
+                enemyArmor.Content = "Броня:  " + Enemy.Armor;
             }
         }
     }
