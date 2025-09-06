@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Game_Markova.Classes;
 
 namespace Game_Markova
 {
@@ -20,6 +21,8 @@ namespace Game_Markova
     /// </summary>
     public partial class MainWindow : Window
     {
+        public PersonInfo Playe = new PersonInfo("Student", 100, 10, 1, 0, 0, 5);
+
         public MainWindow()
         {
             InitializeComponent();
