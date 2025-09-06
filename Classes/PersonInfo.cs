@@ -16,15 +16,15 @@ namespace Game_Markova.Classes
         public int Money { get; set; }
         public float Damage { get; set; }
 
-        public PersonInfo(string name, int health, int armor, int level, int glasses, int money, float damage)
+        public PersonInfo(string Name, int Health, int Armor, int Level, int Glasses, int Money, float Damage)
         {
-            Name = name;
-            Health = health;
-            Armor = armor;
-            Level = level;
-            Glasses = glasses;
-            Money = money;
-            Damage = damage;
+            this.Name = Name;
+            this.Health = Health;
+            this.Armor = Armor;
+            this.Level = Level;
+            this.Glasses = Glasses;
+            this.Money = Money;
+            this.Damage = Damage;
         }
     }
 }
