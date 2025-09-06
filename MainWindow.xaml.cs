@@ -25,6 +25,7 @@ namespace Game_Markova
         public PersonInfo Player = new PersonInfo("Student", 100, 10, 1, 0, 0, 5);
         public List<PersonInfo> Enemys = new List<PersonInfo>();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
+        public Classes.PersonInfo Enemy;
 
         public MainWindow()
         {
@@ -36,16 +37,31 @@ namespace Game_Markova
             Enemys.Add(new PersonInfo("Болотный зверь 3", 150, 20, 1, 0, 40, 20));
 
             dispatcherTimer.Tick += AtackPlayer;
-            dispatcherTimer.Interval = new System.TimeSpan(0, 0, 10);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 10);
             dispatcherTimer.Start();
+
+            SelectEnemy();
 
         }
 
         private void AtackPlayer(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
+        public void SelectEnemy()
+        {
+            int Id = new Random().Next(0, Enemys.Count);
+            Enemy = new PersonInfo(
+                Enemys[Id].Name,
+                Enemys[Id].Health,
+                Enemys[Id].Armor,
+                Enemys[Id].Level,
+                Enemys[Id].Glasses,
+                Enemys[Id].Money,
+                Enemys[Id].Damage
+                );
+        }
         public void UserInfoPlayer()
         {
             if(Player.Glasses > Player.Level * 100)
@@ -66,7 +82,8 @@ namespace Game_Markova
 
         private void AttackEnemy(object sender, MouseButtonEventArgs e)
         {
-
+            Player.Health -= Convert.ToInt32(Enemy.Damage * 100f / (100f - Player.Armor));
+            UserInfoPlayer();
         }
     }
 }
