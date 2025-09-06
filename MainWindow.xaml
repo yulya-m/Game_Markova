@@ -32,7 +32,9 @@
             BorderBrush="Black"
             BorderThickness="1"
             Background="White"
-            Margin="10,10,10,10" Grid.Column="1">
+            Margin="10,10,10,10" 
+            MouseDown="AttackEnemy"
+            Grid.Column="1">
 
             <Grid>
                 <Image x:Name="enemyImage" Margin="10, 10, 10, 185" Source="/Image/enemy_0.png"/>

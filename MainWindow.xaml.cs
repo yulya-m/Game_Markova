@@ -21,11 +21,33 @@ namespace Game_Markova
     /// </summary>
     public partial class MainWindow : Window
     {
-        public PersonInfo Playe = new PersonInfo("Student", 100, 10, 1, 0, 0, 5);
+        public PersonInfo Player = new PersonInfo("Student", 100, 10, 1, 0, 0, 5);
 
         public MainWindow()
         {
             InitializeComponent();
+        }
+        public void UserInfoPlayer()
+        {
+            if(Player.Glasses > Player.Level * 100)
+            {
+                Player.Level++;
+                Player.Glasses = 0;
+                Player.Health += 100;
+                Player.Damage++;
+                Player.Armor++;
+            }
+
+            playerHealth.Content = "Жизненные показатели: " + playerHealth;
+            playerArmor.Content = "Броня: " + playerArmor;
+            playerLevel.Content = "Уровень: " + playerLevel;
+            playerGlasses.Content = "Опыт: " + playerGlasses;
+            playerMoney.Content = "Монеты: " + playerMoney;
+        }
+
+        private void AttackEnemy(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
