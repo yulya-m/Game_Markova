@@ -22,19 +22,19 @@ namespace Game_Markova
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Classes.PersonInfo Player = new Classes.PersonInfo("Student", 100, 10, 1, 0, 0, 5);
-        public List<Classes.PersonInfo> Enemys = new List<Classes.PersonInfo>();
+        public PersonInfo Player = new PersonInfo("Student", 100, 10, 1, 0, 0, 5);
+        public List<PersonInfo> Enemys = new List<PersonInfo>();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
-        public Classes.PersonInfo Enemy;
+        public PersonInfo Enemy;
 
         public MainWindow()
         {
             InitializeComponent();
             UserInfoPlayer();
 
-            Enemys.Add(new Classes.PersonInfo("Болотный зверь", 100, 10, 1, 0, 15, 10));
-            Enemys.Add(new Classes.PersonInfo("Болотный зверь 2", 120, 15, 1, 0, 30, 15));
-            Enemys.Add(new Classes.PersonInfo("Болотный зверь 3", 150, 20, 1, 0, 40, 20));
+            Enemys.Add(new PersonInfo("Болотный зверь", 100, 10, 1, 10, 15, 10));
+            Enemys.Add(new PersonInfo("Болотный зверь 2", 120, 15, 1, 20, 30, 15));
+            Enemys.Add(new PersonInfo("Болотный зверь 3", 150, 20, 1, 30, 40, 20));
 
             dispatcherTimer.Tick += AtackPlayer;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 10);
@@ -53,7 +53,7 @@ namespace Game_Markova
         public void SelectEnemy()
         {
             int Id = new Random().Next(0, Enemys.Count);
-            Enemy = new Classes.PersonInfo(
+            Enemy = new PersonInfo(
                 Enemys[Id].Name,
                 Enemys[Id].Health,
                 Enemys[Id].Armor,
@@ -65,7 +65,7 @@ namespace Game_Markova
         }
         public void UserInfoPlayer()
         {
-            if(Player.Glasses > Player.Level * 100)
+            if(Player.Glasses > 100 * Player.Level)
             {
                 Player.Level++;
                 Player.Glasses = 0;
@@ -81,12 +81,12 @@ namespace Game_Markova
             playerMoney.Content = "Монеты: " + Player.Money;
         }
 
-        private void AttackEnemy(object sender, MouseButtonEventArgs e)
+        private void AttackEnemy(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Enemy.Health -= Convert.ToInt32(Player.Damage * 100f / (100f - Enemy.Armor));
             if (Enemy.Health <= 0)
             {
-                Player.Glasses += Enemy.Glasses;
+                Player.Glasses += Convert.ToInt32(Enemy.Glasses * 1.3f);
                 Player.Money += Enemy.Money;
                 UserInfoPlayer();
                 SelectEnemy();

@@ -21,11 +21,11 @@
             <Grid>
                 <Image Margin="10, 10, 10, 185" Source="/Image/player.png"/>
                 <Label Content="Основные характеристики персонажа:" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" Margin="10, 0, 0, 160"/>
-                <Label x:Name="playerHealth" Content="Жизненные показатели:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 130"/>
-                <Label x:Name="playerArmor" Content="Броня:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 100"/>
-                <Label x:Name="playerLevel" Content="Уровеь:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 70"/>
-                <Label x:Name="playerGlasses" Content="Опыт:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 40"/>
-                <Label x:Name="playerMoney" Content="Монеты:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 10"/>
+                <Label x:Name="playerHealth" Content="Жизненные показатели: 100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 130"/>
+                <Label x:Name="playerArmor" Content="Броня: 100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 100"/>
+                <Label x:Name="playerLevel" Content="Уровеь: 1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 70"/>
+                <Label x:Name="playerGlasses" Content="Опыт: 0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 40"/>
+                <Label x:Name="playerMoney" Content="Монеты: 0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 10"/>
             </Grid>
         </Border>
         <Border
